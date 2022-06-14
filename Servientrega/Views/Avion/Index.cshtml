@@ -1,0 +1,57 @@
+﻿@model AvionViewModel
+@{
+    ViewData["Title"] = "Avion";
+}
+<div class="container">
+    @if (TempData["message"] != null)
+    {
+        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+            @TempData["message"]
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+    }
+    <div class="row">
+        <div class="col-sm-6">
+            <h3> Listado</h3>
+        </div>
+        <div class="col-sm-6">
+            <a class="btn btn-success d-block" asp-action="Create" asp-controller="Avion">Crear nuevo registro</a>
+        </div>
+    </div>
+    <hr>
+    <div class="row justify-content-center">
+        @if (Model?.ListAvion?.Count() > 0)
+        {
+            <table class="table table-bordered table-striped" id="Table">
+                <thead>
+                    <tr>
+                        <td>@Html.DisplayNameFor(m => m.Modelo)</td>
+                        <td>@Html.DisplayNameFor(m => m.Capacidad)</td>
+                        <td>@Html.DisplayNameFor(m => m.Descripcion)</td>
+                        <td>Acciones</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.ListAvion)
+                    {
+                        <tr>
+                            <td>@item.Modelo</td>
+                            <td>@item.Capacidad</td>
+                            <td>@item.Descripcion</td>
+                            <td>
+                                <a asp-controller="Avion" asp-action="Update" asp-route-id="@item.Id" class="btn btn-warning">Editar</a>
+                                <a asp-controller="Avion" asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger">Eliminar</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        }
+        else
+        {
+            <p>No se encuentra registros </p>
+        }
+    </div>
+</div>

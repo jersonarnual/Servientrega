@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <CopyRefAssembliesToPublishDirectory>false</CopyRefAssembliesToPublishDirectory>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="5.0.17" />
+    <PackageReference Include="Microsoft.Extensions.Http" Version="6.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Servientrega.Business\Servientrega.Business.csproj" />
+    <ProjectReference Include="..\Servientrega.Data\Servientrega.Data.csproj" />
+    <ProjectReference Include="..\Servientrega.Infraestructure\Servientrega.Infraestructure.csproj" />
+    <ProjectReference Include="..\Svientrega.Api\Servientrega.Api.csproj" />
+  </ItemGroup>
+
+</Project>

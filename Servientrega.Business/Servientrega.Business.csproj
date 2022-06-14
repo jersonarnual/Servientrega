@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="11.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Servientrega.Data\Servientrega.Data.csproj" />
+    <ProjectReference Include="..\Servientrega.Infraestructure\Servientrega.Infraestructure.csproj" />
+  </ItemGroup>
+
+</Project>
